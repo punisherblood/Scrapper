@@ -1,0 +1,4 @@
+BS4
+requests
+lxml
+psycopg[binary]

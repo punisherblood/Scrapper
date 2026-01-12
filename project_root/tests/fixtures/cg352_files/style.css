@@ -1,0 +1,363 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+    position: relative;
+    margin: 0;
+    padding: 0
+}
+
+:root {
+    /*ЦВЕТА ФОНОВ*/
+    --bg-main: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-secondary-t: #f8f9fa55;
+    --bg-accent: #e6f0ff;
+    --bg-accent-t: #e6f0ff55;
+
+    /*ЦВЕТА ТЕКСТА*/
+    --text-primary: #212121;
+    --text-secondary: #5a5a5a;
+    --text-inverted: #ffffff;
+    --text-link: #006abf;
+
+    /*БРЕНДОВЫЕ ЦВЕТА*/
+    --color-primary: #006abf;
+    --color-primary-opacity: #006abf22;
+    --color-primary-off: #006abf55;
+    --color-primary-hover: #0055a4;
+    --color-primary-active: #004080;
+
+    /*ТИПОГРАФИКА*/
+    --font-main: system-ui, -apple-system, sans-serif;
+    --font-size: 14px;
+
+    /*ДЕКОРАТИВНЫЕ ЭЛЕМЕНТЫ*/
+    --border-radius-site: 3px;
+    --border-radius-cont: 3px;
+
+    /*РАЗМЕРЫ*/
+    --width: 1200px;
+}
+
+/* Основные компоненты */
+html {
+    font-family: var(--font-main), serif;
+    font-size: var(--font-size);
+}
+
+html[page] {
+    overflow-y: scroll;
+}
+
+body {
+    background-color: var(--bg-secondary);
+}
+
+a, p, span, input, button {
+    font-size: 1rem;
+}
+
+a, p {
+    color: inherit;
+    text-wrap: wrap;
+}
+
+a[href] {
+    text-decoration: underline;
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+h2 {
+    font-size: 1.4rem;
+}
+
+h3 {
+    font-size: 1.3rem;
+}
+
+h4 {
+    font-size: 1.2rem
+}
+
+h5 {
+    font-size: 1.1rem
+}
+
+h6 {
+    font-size: 1rem
+}
+
+ul, ol {
+    list-style-type: none;
+    padding: 0;
+}
+
+table {
+    border-spacing: 0;
+    width: 100%;
+    overflow-x: scroll;
+}
+
+input, button {
+    padding: 1rem 2rem;
+    border-radius: var(--border-radius-cont);
+    border: unset;
+    outline: 1px solid #5555;
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+div.content {
+    margin: auto;
+    width: var(--width);
+}
+
+iframe {
+    width: 100%;
+    border: unset;
+}
+
+/* Меню сайта */
+
+img.logo {
+    height: 50px;
+    margin: 3rem 0;
+    object-fit: contain;
+    width: 100%;
+}
+
+header > * {
+    display: flex;
+    background-color: var(--bg-main);
+    padding-bottom: 2rem;
+}
+
+nav.nav-items ul.group {
+    display: flex;
+    gap: 5px;
+    margin: 0 1rem;
+    justify-content: center;
+}
+
+nav.nav-items ul.group > li {
+    display: flex;
+    flex: 1;
+    min-width: 150px;
+    max-width: 200px;
+    text-align: center;
+    flex-direction: column;
+    background-color: var(--color-primary);
+    color: var(--text-inverted);
+    transform: translateY(5px);
+    border-radius: var(--border-radius-site) var(--border-radius-site) 0 0;
+}
+
+nav.nav-items ul.group > li.active {
+    background-color: var(--bg-accent);
+    color: var(--text-primary);
+    border-left: 1px solid #5555;
+    border-right: 1px solid #5555;
+    border-top: 1px solid #5555;
+    z-index: 1;
+}
+
+nav.nav-items ul.group > li > a {
+    padding: 1rem 0.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+nav.nav-items ul.subgroup {
+    display: flex;
+    padding: 0.5rem;
+    justify-content: center;
+    color: var(--text-primary);
+    border: 1px solid #aaa;
+    gap: 5px;
+    border-radius: var(--border-radius-site);
+    background-color: var(--bg-accent);
+}
+
+nav.nav-items ul.subgroup li {
+    display: flex;
+    flex: 1;
+    text-align: center;;
+}
+
+nav.nav-items ul.subgroup li a {
+    flex: 1;
+    padding: 0.75rem 5px;
+    text-transform: uppercase;
+}
+
+nav.nav-items ul.subgroup li a[href="#"] {
+    display: none;
+}
+
+nav.nav-items ul.subgroup li a:hover {
+    background-color: var(--bg-secondary-t);
+}
+
+div.search {
+    z-index: 1000;
+    position: sticky;
+    top: 0;
+	padding: 1rem 0;
+    background-color: var(--bg-main);
+}
+
+div.search .stats {
+    display: none;
+}
+
+div.search div.search-ui {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+div.search div.search-ui div.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+div.search div.search-ui div.buttons button {
+    padding: 1rem;
+    margin: 0;
+    background-color: var(--color-primary);
+    color: var(--text-inverted);
+}
+
+div.search input.searchKey {
+    margin-bottom: unset;
+    margin-top: unset;
+}
+
+/*Таблица*/
+tr td:first-child {
+    width: 1%;
+    white-space: nowrap;
+}
+
+div.output-title {
+    margin-top: 2rem;
+}
+
+table.output-table {
+    margin-top: 2rem;
+    max-width: 100%;
+    display: block;
+}
+
+table.output-table,
+table.output-table td {
+    border: 1px solid var(--text-link);
+    /*border-style: dashed;*/
+}
+
+table.output-table td.hover {
+}
+
+table.output-table td {
+    padding: 1rem;
+}
+
+table.output-table tr:nth-child(2n + 2) td {
+    background: var(--color-primary-opacity);
+}
+
+
+table.output-table thead td {
+    background-color: var(--color-primary);
+    color: var(--text-inverted);
+    font-weight: bold;
+}
+
+table.output-table a {
+    align-content: center;
+}
+
+table.output-table a.z0,
+table.output-table a.z1 {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--text-link);
+}
+
+table.output-table a.z2 {
+    text-decoration: none;
+    color: var(--text-primary);
+    font-family: monospace;
+}
+
+table.output-table a.z3 {
+    text-decoration: none;
+    color: var(--text-primary);
+    width: 100%;
+}
+
+table.output-table td.nul::before {
+    content: 'Нет пар...';
+    opacity: 0.2;
+    padding: 5px;
+}
+
+.none {
+    display: none;
+}
+
+p.group {
+    font-family: monospace;
+    text-transform: uppercase;
+    color: #f55;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+p.group.max {
+    color: #55f;
+}
+
+
+td.hd0 {
+    height: 1px !important;
+    padding: 0 !important;
+}
+
+td[rowspan] {
+    background: #fff !important;
+}
+
+div.copy {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+div.copy p,
+div.copy span,
+div.copy a {
+    font-size: 1.2rem;
+}
+
+div.copy a {
+    color: var(--text-link);
+}
+
+@media (max-width: 993px) {
+    :root {
+        --width: 90%;
+    }
+
+    table.output-table td {
+        padding: 8px 5px;
+    }
+
+    nav.nav-items ul.group > li {
+        min-width: auto;
+        max-width: unset;
+    }
+}
